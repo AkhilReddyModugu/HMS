@@ -1,0 +1,53 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <span class="logo-icon">+</span>
+          <span class="logo-text">MediCare</span>
+        </a>
+        <p class="footer-tagline">
+          Convenient and quality healthcare solutions for everyone
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="social-icon">f</i></a>
+          <a href="#" aria-label="Twitter"><i class="social-icon">t</i></a>
+          <a href="#" aria-label="Instagram"><i class="social-icon">i</i></a>
+          <a href="#" aria-label="LinkedIn"><i class="social-icon">l</i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li *ngFor="let link of quickLinks">
+            <a [href]="link.link">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Support</h4>
+        <ul>
+          <li *ngFor="let link of supportLinks">
+            <a [href]="link.link">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <address>
+          <p><strong>Address:</strong> 123 Hospital Street, Healthcare City, HC 10001</p>
+          <p><strong>Phone:</strong> (123) 456-7890</p>
+          <p><strong>Email:</strong> info_medicare.com</p>
+          <p><strong>Hours:</strong> 24/7 Emergency Care | 8am-6pm Regular Hours</p>
+        </address>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} MediCare Hospital. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

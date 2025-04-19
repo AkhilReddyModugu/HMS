@@ -1,0 +1,137 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: all var(--transition-normal);
+  z-index: 1000;
+  padding: var(--space-2) 0;
+}
+
+.nav-container.scrolled {
+  background-color: white;
+  box-shadow: var(--shadow-md);
+  padding: var(--space-1) 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-700);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo-icon {
+  background-color: var(--primary-600);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-1);
+  font-size: 1.2rem;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-3);
+}
+
+.nav-links a {
+  color: var(--neutral-800);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--primary-600);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn-login {
+  padding: var(--space-1) var(--space-2);
+}
+
+.btn-signup {
+  padding: var(--space-1) var(--space-2);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--neutral-800);
+  transition: var(--transition-fast);
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: var(--shadow-md);
+    padding: var(--space-2) 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path var(--transition-normal);
+  }
+
+  .nav-links.nav-active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+  }
+
+  .nav-actions {
+    gap: var(--space-1);
+  }
+
+  .btn-login, .btn-signup {
+    font-size: 0.875rem;
+    padding: var(--space-1) var(--space-1);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-login {
+    display: none;
+  }
+}

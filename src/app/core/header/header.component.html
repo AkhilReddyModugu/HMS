@@ -1,0 +1,28 @@
+<nav class="nav-container" [class.scrolled]="isScrolled">
+  <div class="container nav-inner">
+    <div class="logo">
+      <a href="/">
+        <span class="logo-icon">+</span>
+        <span class="logo-text">MediCare</span>
+      </a>
+    </div>
+
+    <div class="nav-links" [class.nav-active]="isMenuOpen">
+      <ul>
+        <li *ngFor="let item of menuItems">
+          <a [href]="item.link">{{ item.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-login">Login</button>
+      <button class="btn btn-primary btn-signup">Sign Up</button>
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>

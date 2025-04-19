@@ -1,0 +1,46 @@
+<section class="testimonials-section section">
+  <div class="container">
+    <h2 class="section-title text-center">What Our Patients Say</h2>
+    <p class="section-subtitle text-center">Read testimonials from patients who have experienced our services</p>
+    
+    <div class="testimonials-carousel">
+      <div class="testimonials-track" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+        <div class="testimonial-slide" *ngFor="let testimonial of testimonials">
+          <div class="testimonial-card card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-content">{{ testimonial.content }}</p>
+            <div class="testimonial-rating">
+              <span class="star" *ngFor="let star of getRatingStars(testimonial.rating)">★</span>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image">
+                <img [src]="testimonial.image" [alt]="testimonial.name">
+              </div>
+              <div class="author-info">
+                <h4 class="author-name">{{ testimonial.name }}</h4>
+                <p class="author-role">{{ testimonial.role }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-controls">
+        <button class="carousel-control prev" (click)="prevSlide()">
+          <span>←</span>
+        </button>
+        <div class="carousel-indicators">
+          <button 
+            *ngFor="let testimonial of testimonials; let i = index" 
+            class="indicator" 
+            [class.active]="i === currentIndex"
+            (click)="setSlide(i)">
+          </button>
+        </div>
+        <button class="carousel-control next" (click)="nextSlide()">
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
